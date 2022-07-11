@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: hsl(180, 52%, 96%);
+  font-size: 15px;
+  font-family: "League Spartan", sans-serif;
+}
+header {
+  background-color: hsl(180, 29%, 50%);
+  background-image: url(./images/bg-header-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 10rem;
+  display: block;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 5rem 0;
+}
+ul {
+  list-style: none;
+  /* width: 100%; */
+}
+.job {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  max-width: 350px;
+  margin-top: 4rem;
+  border-radius: 5px;
+  padding: 1.5rem;
+  box-shadow: 2px 7px 17px 0px rgb(191, 235, 235);
+}
+
+#one1,
+#one2 {
+  border-left: 5px solid rgb(75, 155, 155);
+}
+.developer-details {
+  /* padding: 1rem; */
+  position: relative;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.avatar {
+  position: absolute;
+  top: -3.5rem;
+  width: 60px;
+  height: 60px;
+}
+.company {
+  font-size: 16px;
+  color: rgb(75, 155, 155);
+}
+.new {
+  background-color: rgb(75, 155, 155);
+  color: #fff;
+  border-radius: 17px;
+  text-transform: uppercase;
+  padding: 0.4rem;
+}
+.featured {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 18px;
+  color: #fff;
+  background-color: hsl(180, 14%, 20%);
+}
+.company-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.new-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+.position-wrap {
+  margin: 1rem 0;
+}
+.position {
+  color: hsl(180, 14%, 20%);
+  font-weight: 700;
+  font-size: 17px;
+}
+.contract-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+  color: hsl(180, 8%, 52%);
+}
+.contract {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.developer-skills {
+  /* padding: 1rem; */
+  display: flex;
+  align-items: center;
+  column-gap: 1.4rem;
+  row-gap: 1rem;
+  flex-wrap: wrap;
+  font-weight: 700;
+  border-top: 1px solid gray;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+.skills,
+.tools,
+.role,
+.level {
+  border: 0;
+  padding: 0.7rem;
+  border-radius: 3px;
+  color: rgb(75, 155, 155);
+  background-color: hsl(180, 52%, 96%);
+}
+.filter{
+  position: relative;
+  top: -2rem;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  display: none;
+  background-color: #fff;
+   max-width: 350px;
+    box-shadow: 2px 7px 17px 0px rgb(191, 235, 235);
+  /* flex-direction: column-reverse; */
+}
+.filtered{
+  display: none;
+   
+}
+.filter-value {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+.filter-value li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  color: rgb(75, 155, 155);
+  background-color: hsl(180, 52%, 96%);
+}
+.search{
+  padding: 0.5rem;
+   font-weight: 500;
+}
+.filter img {
+  background-color: rgb(75, 155, 155);
+  max-width: 100%;
+  display: block;
+  padding: 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.clear{
+  padding: 0;
+  font-weight: 500;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+@media (min-width: 70rem) {
+  header {
+    background-image: url(./images/bg-header-desktop.svg);
+  }
+  .filter {
+      min-width: 900px;
+  }
+  .filter img:hover{
+    background-color: black;
+    cursor: pointer;
+  }
+  .position:hover,.clear:hover{
+    cursor: pointer;
+    color: rgb(75, 155, 155);
+  }
+  .clear:hover{
+border-bottom: 1px solid ;
+
+  }
+  .skills:hover,.tools:hover,.role:hover,
+.level:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(75, 155, 155);
+  }
+  .developer-details {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    padding-top: 0;
+  }
+  .job {
+    min-width: 900px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .avatar {
+    position: relative;
+    top: auto;
+    /* height: 60px; */
+  }
+  .position-wrap {
+    margin: 0.5rem 0;
+  }
+  .developer-skills {
+    border: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
