@@ -98,6 +98,10 @@ async function getData() {
   });
 }
 //deconstruct the skills and tools array and paste inthe web page
+// get the container where the elements will be pasted
+//create variable to store the created element for the skills and and tools data
+//give the element a class name to enable styleing in the css file
+//apppend the create element to its parent element the call the function in the async function
 function listSkills(element) {
   const lis = document.querySelectorAll(".developer-skills");
   let skill, tool;
@@ -123,11 +127,15 @@ function listSkills(element) {
 //call the function to get the webpage running
 getData();
 
+
+//to paste the click skills/tools/level/position in the filter box
+// get the filterbox container from the html page
+// get the file boxfrom the html page
+//create a function that create filter box any time a button is clicked
 const filterBoxwrapper = document.querySelector(".filter");
 const filterBox = document.querySelector(".filter-value");
 
 let list;
-
 
 
 function pasteClickedSkill(e) {
@@ -150,7 +158,7 @@ function pasteClickedSkill(e) {
   }
   filterJobList();
 }
-
+//when listcontainer is clicked run the pasteClickedSkill
 listContainer.addEventListener("click", pasteClickedSkill);
 
 const filterJobList = () => {
