@@ -131,7 +131,10 @@ getData();
 //to paste the click skills/tools/level/position in the filter box
 // get the filterbox container from the html page
 // get the file boxfrom the html page
-//create a function that create filter box any time a button is clicked
+//create a function that displays the filter box any time a button is clicked
+//create a function that create filter skill box any time a button is clicked
+//call the function that filters the job list to display only the job that contains clicked button
+
 const filterBoxwrapper = document.querySelector(".filter");
 const filterBox = document.querySelector(".filter-value");
 
@@ -161,6 +164,8 @@ function pasteClickedSkill(e) {
 //when listcontainer is clicked run the pasteClickedSkill
 listContainer.addEventListener("click", pasteClickedSkill);
 
+//create a function that loops through the skills in the filter box container
+//if the job lists skills does not includes the searched skill add a filtered class to it
 const filterJobList = () => {
   let search = document.querySelectorAll(".search");
 
@@ -172,8 +177,11 @@ const filterJobList = () => {
   });
 };
 
+//create a function that removes the search skill from the filter box when the close image is click
+// and when the clear button is click it reamoves all the search skills and close the filter
+// and when there is no search skill the filterbox is closed automaticalliy
 function removeSearchedSkill(e) {
-//  filterBoxwrapper.addEventListener("click", (e) => {
+
     try {
       let searchSkill = e.target.parentElement;
       if (e.target.matches("img")) {
@@ -187,22 +195,22 @@ function removeSearchedSkill(e) {
           Array.from(listContainer.children)
 
             //filter the list of job when a skill is removed from the filterbox if the searched job is set to display none remove
-            .filter((bb) => bb.textContent.includes(element.textContent))
-            .forEach((bb) => bb.classList.remove("filtered"));
+            .filter((joblist) => joblist.textContent.includes(element.textContent))
+            .forEach((joblist) => joblist.classList.remove("filtered"));
         });
       } else if (e.target.matches("p")) {
         list.remove();
       }
       if (!filterBox.hasChildNodes()) {
         filterBoxwrapper.style.display = "none";
-        Array.from(listContainer.children).forEach((bb) =>
-          bb.classList.remove("filtered")
+        Array.from(listContainer.children).forEach((joblist) =>
+          .classList.remove("filtered")
         );
       }
     } catch (error) {
       console.log("error");
     }
- // });
+
 }
-//removeSearchedSkill();
+
  filterBoxwrapper.addEventListener("click", removeSearchedSkill);
