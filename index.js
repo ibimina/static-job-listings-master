@@ -204,7 +204,7 @@ function removeSearchedSkill(e) {
       if (!filterBox.hasChildNodes()) {
         filterBoxwrapper.style.display = "none";
         Array.from(listContainer.children).forEach((joblist) =>
-          .classList.remove("filtered")
+          joblist.classList.remove("filtered")
         );
       }
     } catch (error) {
